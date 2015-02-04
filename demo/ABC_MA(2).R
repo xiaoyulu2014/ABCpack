@@ -26,7 +26,6 @@ f = function(x) {
   return(z)
 }
 
-devtools::load_all()
 theta = ABC(100000,0.01,function(y,z) sqrt(sum((y-z)^2)) ,function(x) x,prior,f)
 theta_auto = ABC(100000,0.01,function(y,z) sqrt(sum((y-z)^2)) ,function(x) c(x[q:n]%*%x[1:(n-q+1)],x[(q+1):n]%*%x[1:(n-q)]),prior,f)
 
